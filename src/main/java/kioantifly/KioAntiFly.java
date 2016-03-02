@@ -1,6 +1,7 @@
 package kioantifly;
 
 import org.bukkit.plugin.java.JavaPlugin;
+
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
@@ -10,6 +11,7 @@ public final class KioAntiFly extends JavaPlugin implements Listener {
 	@Override
 	public void onEnable()
 	{
+		this.saveDefaultConfig();
 		getServer().getPluginManager().registerEvents(this, this);
 	}
 	
@@ -23,27 +25,27 @@ public final class KioAntiFly extends JavaPlugin implements Listener {
 	public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent e)
 	{
 		String worldName = e.getPlayer().getLocation().getWorld().getName();
-		System.out.println("dsadasfsa");
 		String rawMessage = e.getMessage();
 		String label = rawMessage.split(" ")[0].toLowerCase();
 		if (label.equals("/fly") && canFlyIn(worldName))
 		{
-			System.out.println("Comando fly nao esta permitido");
+			e.getPlayer().sendMessage("Comando fly nao esta permitido neste mundo");
 			e.setCancelled(true);
 		}else{		
-			System.out.print("Comando fly permitido neste mundo");
+			e.getPlayer().sendMessage("Comando fly permitido neste mundo, bom proveito");
 		}
-		
 	}
 	
 	private boolean canFlyIn(String worldName)
 	{
-		if (worldName.equals("flatroom"))
+		for(String w : getConfig().getStringList("blockedWorlds"))
 		{
-			return true;
-		}else{
-			return false;
+			if (worldName.equals(w))
+			{
+				return true;
+			}
 		}
+		return false;
 	}
 	
 }
