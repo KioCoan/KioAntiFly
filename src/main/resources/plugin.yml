@@ -1,0 +1,19 @@
+name: KioAntiFly
+main: kioantifly.KioAntiFly
+version: 1.0.0
+author: Kio
+load: POSTWORLD
+description: A plugin to disable flying in specific worlds.
+commands:
+  kaf:
+    description: Main KioAntiFly command, use it to list sub-commands. 
+    aliases: [kioantifly]  
+    usage: /<command>
+permissions:
+  kioantifly.use:
+  kioantifly.*:
+    description: Star notation of permissions, includes all of them.
+    default: op
+    children:
+      antiworldfly.use: true
+      antiworldfly.fly: true

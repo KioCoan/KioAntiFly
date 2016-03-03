@@ -1,4 +1,6 @@
 # KioAntiFly Config information
-# Set a list for worlds where /fly should be blocked
+# Set a list for worlds where /fly should be blocked :)
+# Version: 1.0.0
 blockedWorlds:
-	- flatroom
+  - flatroom
+  #- exempleWorld

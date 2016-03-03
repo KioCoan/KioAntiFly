@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.kiocoan</groupId>
   <artifactId>KioAntiFly</artifactId>
-  <version>0.1.1</version>
+  <version>1.0.0</version>
   <name>KioAntiFly</name>
   <description>An antifly plugin</description>
   <build>
@@ -24,13 +24,13 @@
        </repository>
    </repositories>
     <dependencies>
-       <dependency>
-           <groupId>org.bukkit</groupId>
-           <artifactId>bukkit</artifactId>
-           <version>1.7.9-R0.2</version>
-           <type>jar</type>
-           <scope>provided</scope>
-       </dependency>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>bukkit</artifactId>
+			<version>1.9-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
    </dependencies>
     <url>kiocoan.github.io/KioAntiFly</url>
 </project>
